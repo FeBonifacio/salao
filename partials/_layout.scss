@@ -1,0 +1,254 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+// IMAGEM DE FUNDO
+.bg-home {
+    position: relative;
+}
+.bg-home::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(207, 42, 119, 0.1), #8b295f), url("../assets/bg.svg");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 0.9;
+}
+
+//HERO
+.hero {
+    color: $white-normal;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    h1 {
+        text-align: center;
+        line-height: 150%;
+        max-width: 940px;
+        font-size: 48px;
+    }
+    p {
+        text-align: center;
+        margin: 14px 0;
+    }
+}
+.button-contact {
+    padding: 14px 28px;
+    color: $white-normal;
+    background-color: $primary-dark;
+    border: 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 14px 0;
+    transition: background-color 0.8s;
+}
+.button-contact:hover {
+    color: $primary-dark;
+    background-color: $white-normal;
+}
+@media screen and (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+    h1 {
+        font-size: 34px;
+        padding: 0 14px;
+        width: 100%;
+    }
+    p{
+        font-size: 14px;
+    }
+}
+
+// PARA MOBILE MUITO PEQUENOS
+@media screen and (max-width: 480px) {
+    .hero {
+        font-size: 24px;
+    }
+}
+
+// SOBRE
+.about {
+    background-color: #8b295f;
+    overflow: hidden;
+    color: $white-normal;
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 14px 64px 14px;
+
+    img {
+        max-width: 570px;
+    }
+}
+.about-content div {
+    flex: 1;
+}
+.about-description {
+    h2 {
+        font-size: 38px;
+        margin-bottom: 24px;
+        line-height: 150%;
+        text-justify: auto;
+    }
+    p {
+        margin-bottom: 14px;
+        line-height: 150%;
+    }
+}
+// SOBRE PARA MOBILE
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+// SERVIÇOS
+.services {
+    color: $primary-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 14px;
+}
+.services-content {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 14px;
+}
+.services-content p {
+    line-height: 150%;
+    margin-bottom: 14px;
+    text-align: center;
+    max-width: 780px;
+}
+.haircuts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0 44px 34px 44px;
+}
+.haircut {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: $white-normal;
+    border-radius: 8px;
+    box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+.haircut:hover {
+    animation: translateY 0.8s infinite alternate;
+}
+@keyframes translateY {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-30px) scale(1);
+    }
+}
+.haircut-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+}
+@media screen and (max-width: 768px) {
+    .haircuts {
+        flex-direction: column;
+    }
+
+    .haircut img {
+        max-width: 740px;
+    }
+}
+
+// MAP FOOTER
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 0;
+    gap: 24px;
+    color: $primary-dark;
+}
+.footer-icons {
+    display: flex;
+    gap: 8px;
+}
+.btn-whatsapp {
+    position: fixed;
+    bottom: 14px;
+    right: 24px;
+    z-index: 99;
+
+    img {
+        max-width: 74px;
+        transition: transform 0.4s;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+    }
+}
+.btn-whatsapp .tooltip-text{
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    top: 8px;
+    left: -140px;
+    padding: 4px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: $white-normal;
+    color: $primary-dark;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.btn-whatsapp:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+.visite {
+    color: $primary-dark;
+    font-size: 24px;
+    text-align: center;
+}
+.map {
+    padding: 10px;
+}
+@media screen and (max-width: 768px) {
+    .btn-whatsapp {
+        img {
+            max-width: 64px;
+        }
+    }
+}
